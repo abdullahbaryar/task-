@@ -13,10 +13,11 @@ import {
 import React, { useState } from "react";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../image/v2flogo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const MenuItems = [
-    { Name: "Home", link: "#" },
+    { Name: "Home", Link: "#" },
     { Name: "Announcments", link: "#" },
     { Name: "VIP fan token", link: "#" },
     { Name: "Wallet", link: "#" },
@@ -27,11 +28,14 @@ const Navbar = () => {
   ];
   const [open, SetOpen] = useState(false);
   return (
+    
     <AppBar sx={{ boxShadow: 'none' ,background: "transparent" }} position="static">
       <StyledToolbar>
-        <SocialBox >
-          <img src={logo} alt="" width="170rem"  />
-        </SocialBox>
+      
+        <Box sx={{mt:'1rem' ,maxWidth:{xs:"110px",sm:"150px",md:"200px"}}}>
+          <Link to='/home'> <img src={logo} alt="" width="100%"  /></Link>
+        </Box>
+        
         <MenuBox sx={{ display: { xs: "none", sm: "none", md: "none",xl:'flex' } }}>
           {MenuItems.map((item) => (
             <Typography
@@ -55,20 +59,23 @@ const Navbar = () => {
           >
             ENGLISH
           </Typography>
+          <Link to="/singnup">
           <Button
             ariant="contained"
             sx={{
               background: "linear-gradient(115deg, #662a74 6%, #802255 95%)",
               color: "#fff",
-              fontSize: 22,
+              fontSize: 18,
               lineHeight: "28px",
               width: 177,
               height: 70,
+              marginRight:"2.5rem",
               display:{xs:'none', sm:'none', md:'block'}
             }}
           >
             Get Started
           </Button>
+          </Link>
           <MenuIcon
             sx={{
               color: "white",
@@ -115,6 +122,7 @@ const StyledToolbar = styled(Toolbar)({
 });
 const SocialBox = styled(Box)({
   margin: "1rem 0 1rem 0",
+  maxWidth:"110px",
 });
 const MenuBox = styled(Box)({
   display: "flex",

@@ -8,12 +8,13 @@ const Home = () => {
     const navigate = useNavigate()
 
     const logOut = () => {
+      localStorage.removeItem("token")
         navigate('/')
     }
   return (
     <Box sx={{marginTop:'10%'}}>
-      <Typography variant="h3" gutterBottom color={'#fff'} sx={{fontSize:{xs:'30px',sm:'50px'}}}>WELCOME YOR ARE </Typography>
-      <Typography  variant="h3" gutterBottom color={'#fff'} sx={{fontSize:{xs:'30px',sm:'50px'}}}> LOGIN</Typography>
+      <Typography variant="h3" gutterBottom color={'#fff'} sx={{fontSize:{xs:'20px',md:'50px'}}}>WELCOME YOR ARE </Typography>
+      <Typography  variant="h3" gutterBottom color={'#fff'} sx={{fontSize:{xs:'20px',md:'50px'}}}> LOGIN</Typography>
       
       <Button
             endIcon={<SendIcon />}
@@ -21,9 +22,9 @@ const Home = () => {
             ariant="contained"
             sx={{
               marginBottom: "1rem",
-              height: "73px",
+              height:{xs:'40px',md:'70px'},
               color: "#fff",
-              fontSize: {xs:'30px',sm:'50px'},
+              fontSize: {xs:'20px',md:'30px'},
               marginTop:'10%',
               fontStyle:'italic',
               lineHeight: "28px",

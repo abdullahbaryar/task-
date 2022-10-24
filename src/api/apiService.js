@@ -26,8 +26,8 @@ export async function signIn (login) {
         url: `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_SIGNIN_ROUTE}`,
         data: data
     });
-
-    return res.status;
+    
+    return res;
 };
 
 export async function getInfo (signInObj = {}) {
